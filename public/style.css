@@ -1,0 +1,10 @@
+@font-face{
+    font-family:sans-serif;
+    src:url('/fonts/OpenSans-Light.ttf') format("truetype");
+  }
+  
+  body {
+    background-color: #000000;
+    color: white;
+    font-family: Verdana;
+  }

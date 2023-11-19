@@ -8,12 +8,3 @@
     color: white;
     font-family: Verdana;
   }
-  
-  .image img {
-    display: block;
-    margin: 20px auto;
-    border: 5px solid #1a1a1a;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    max-width: 100%;
-  }

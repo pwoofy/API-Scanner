@@ -12,8 +12,49 @@ app.post('/user', async (req, res) => {
   const input = req.body.input;
   const apiEndpoints = [
     {
-
-    }
+      name: 'User (UserID)',
+      endpoint: `https://users.roblox.com/v1/users/${input}`
+    },
+    {
+      name: 'Avatar (UserID)',
+      endpoint: `https://avatar.roblox.com/v1/users/${input}/avatar`
+    },
+    {
+      name: 'Currently Wearing (UserID)',
+      endpoint: `https://avatar.roblox.com/v1/users/${input}/currently-wearing`
+    },
+    {
+      name: 'Outfits (UserID)',
+      endpoint: `https://avatar.roblox.com/v1/users/${input}/outfits?page=1&itemsPerPage=100`
+    },
+    {
+      name: 'Badges (UserID)',
+      endpoint: `https://badges.roblox.com/v1/users/${input}/badges?limit=100&sortOrder=Asc`
+    },
+    {
+      name: 'Bundles Owned (UserID)',
+      endpoint: `https://catalog.roblox.com/v1/users/${input}/bundles?limit=100&sortOrder=Asc`
+    },
+    {
+      name: 'Friends (UserID)',
+      endpoint: `https://friends.roblox.com/v1/users/${input}/friends`
+    },
+    {
+      name: 'Favorited Games (UserID)',
+      endpoint: `https://games.roblox.com/v2/users/${input}/favorite/games?accessFilter=2&limit=50&sortOrder=Asc`
+    },
+    {
+      name: 'Games (UserID)',
+      endpoint: `https://games.roblox.com/v2/users/${input}/games?accessFilter=2&limit=50&sortOrder=Asc`
+    },
+    {
+      name: 'Group Roles (UserID)',
+      endpoint: `https://groups.roblox.com/v2/users/${input}/groups/roles`
+    },
+    {
+      name: 'Owned Assets (UserID)',
+      endpoint: `https://inventory.roblox.com/v1/users/${input}/assets/collectibles?limit=100&sortOrder=Asc`
+    },
   ];
   let results = '';
 

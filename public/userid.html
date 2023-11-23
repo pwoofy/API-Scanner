@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>api stuff</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <h1>UserID API Searcher</h1>
+i dont know at this point lol
+  <br>
+  made by pwoofy
+  <br><br><br>
+  <input type="text" id="input" placeholder="Enter Roblox Group ID">
+  <button id="fetchButton">Fetch Data</button>
+  <pre id="result"></pre>
+  <script>
+    const fetchButton = document.getElementById('fetchButton');
+    const inputElement = document.getElementById('input');
+    const resultElement = document.getElementById('result');
+
+    fetchButton.addEventListener('click', async () => {
+      const input = inputElement.value.trim();
+      if (!input) {
+        alert('Please enter a Roblox Game ID.');
+        return;
+      }
+
+      try {
+        const response = await fetch('/user', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ input })
+        });
+
+        if (!response.ok) {
+          console.error('Fetch Error:', response.statusText);
+          resultElement.textContent = 'An error occurred while fetching data.';
+          return;
+        }
+
+        const data = await response.text();
+        resultElement.innerHTML = data;
+      } catch (error) {
+        console.error('Fetch Error:', error);
+        resultElement.textContent = 'An error occurred while fetching data.';
+      }
+    });
+  </script>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  WEBSITE DESIGN IS MY PASSION<br>
+</body>
+</html>

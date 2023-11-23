@@ -8,6 +8,32 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.post('/user', async (req, res) => {
+  const input = req.body.input;
+  const apiEndpoints = [
+    {
+
+    }
+  ];
+  let results = '';
+
+  for (const api of apiEndpoints) {
+    try {
+      const response = await fetch(api.endpoint);
+      const json = await response.json();
+      const formattedJson = JSON.stringify(json, null, 2);
+
+      results += `${api.name}\n`;
+      results += '='.repeat(70) + '\n';
+      results += `${formattedJson}\n`;
+      results += '='.repeat(70) + '\n\n';
+    } catch (error) {
+      results += `${api.name} - Error: ${error.message}\n\n`;
+    }
+  }
+  res.send(`<pre>${results}</pre>`);
+});
+
 app.post('/scan', async (req, res) => {
     const input = req.body.input;
   

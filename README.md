@@ -15,7 +15,7 @@ However, if you are a developer (or someone who is just curious), you can find i
 1. Clone the repository:
 
 ```bash
-https://github.com/pwoofy/API-Scanner.git
+git clone https://github.com/pwoofy/API-Scanner.git
 ```
 
 2. Navigate to the project directory:

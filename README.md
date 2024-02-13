@@ -41,6 +41,30 @@ The server will start on http://localhost:3000.
 2. Open your web browser and go to http://localhost:3000.
 3. Once you do that, the rest should be easy to understand.
 
+### Quitting
+
+(because i forgot to include it)
+
+Quitting the server just requires you to do ctrl-c
+
+However, if you somehow forgot to do this, and when you restart it this warning shows up:
+
+```bash
+address already in use :::3000
+```
+
+Then simply run:
+
+```bash
+sudo lsof -i:3000
+```
+
+Then get the PID, then paste it in  this command:
+
+```bash
+kill -9 {ID HERE}
+```
+
 ### Contibuting
 
 Feel free to contribute to this project by opening issues or pull requests.
